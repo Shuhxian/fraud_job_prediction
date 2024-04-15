@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<style>
+    body {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT11Fqj9dfaZKCkq1f9j8s8tl8PStevx31L4hPCam1Z6g&s');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      color: white;
+      text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+    }
+</style>
+<html>
+    <h1>Fraudulent Job Prediction</h1>
+  
+    <body>
+        <div style="width: 100%;">
+            <div style="width: 20%; float: left;"> 
+                <label for="desc">Description:</label><br>
+                <textarea id="desc" name="desc" cols="100" rows="10"></textarea>
+                <br><br>
+        
+                <button id="btn">Predicted Job Authenticity</button> 
+                <input id="resp" name="resp">
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const button = document.getElementById('btn');
+        button.addEventListener('click', async _ => {
+        try {     
+            const response = await fetch('predict', {
+            method: 'POST',
+            body: JSON.stringify({
+                description: document.getElementById('desc').value,
+            }),
+            headers: new Headers({
+            "Content-Type": "application/json"
+            })
+            }).then(response=>response.json())
+            .then(result=> {
+                console.log(result['resp']);
+                document.getElementById('resp').value = result['resp'];
+            });
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+        });
+        
+    </script>
+</html>
