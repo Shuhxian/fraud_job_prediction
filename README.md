@@ -1,8 +1,12 @@
 # Fraud Job Prediction
 
+## Installation
+```
+docker build -t streamlit .
+```
+
 ## How to Run
 ```
-pip install -r requirements.txt
-flask run 
+docker run -p 8080:8080 streamlit
 ```
-Navigate to 127.0.0.1:5000 to access the website.
+Navigate to localhost:5000 to access the website.

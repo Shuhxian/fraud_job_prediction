@@ -1,1 +1,7 @@
-flask
+streamlit==1.33.0
+pandas==2.0.3
+numpy==1.25.2
+nltk==3.8.1
+contractions==0.1.73
+imbalanced-learn==0.10.1
+scikit-learn==1.2.2
