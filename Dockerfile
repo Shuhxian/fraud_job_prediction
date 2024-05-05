@@ -13,6 +13,7 @@ WORKDIR /app
 COPY app.py app.py
 COPY image.png image.png
 COPY fake_job_postings.csv fake_job_postings.csv
+COPY pipeline.pkl pipeline.pkl
 
 # Run
 ENTRYPOINT ["streamlit","run","app.py","--server.port=8080","--server.address=0.0.0.0"]
