@@ -17,4 +17,4 @@ pip install -r requirements.txt
 streamlit run app.py --server.port=8080 --server.address=0.0.0.0
 ```
 
-Navigate to localhost:5000 to access the website.
+Navigate to localhost:8080 (or the specified server.port) to access the website.
